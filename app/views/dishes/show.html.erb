@@ -7,6 +7,13 @@
     <dl class="dl-horizontal">
       <dt>Name</dt>
       <dd><%= @dish.name %></dd>
+      
+      <dt>Venue</dt>
+      <dd>
+        <% @dish.specialists.each do |specialist| %>
+          <p><%= specialist.name %></p>
+        <% end %>
+      </dd>
 
       <dt>Cuisine</dt>
       <dd>

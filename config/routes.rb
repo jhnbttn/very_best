@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => "venues#index"
+  get("/", {:controller => "dishes", :action => "index"}) 
 
   # Routes for the Bookmark resource:
   # CREATE

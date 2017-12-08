@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Edit Bookmark #<%= @bookmark.id %></h3>
+  <h3>Edit Bookmark #<%= @bookmark %></h3>
 </div>
 
 <div class="row">
@@ -24,7 +24,7 @@
           Dish
         </label>
 
-        <%= select_tag(:dish_id, options_from_collection_for_select(Dish.all, :id, :name, @bookmark.dish_id), :class => "form-control") %>
+        <%= select_tag(:dish_id, options_from_collection_for_select(Dish, :id, :name, @bookmark.dish_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for venue_id -->
@@ -33,7 +33,7 @@
           Venue
         </label>
 
-        <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all, :id, :name, @bookmark.venue_id), :class => "form-control") %>
+        <%= select_tag(options_from_collection_for_select(Venue.all, :id, :name, @bookmark.venue_id), :class => "form-control") %>
       </div>
 
       
@@ -52,7 +52,7 @@
         Update Bookmark
       </button>
       or
-      <a href="/bookmarks/<%= @bookmark.id %>">Cancel</a>
+      <a href="/bookmarks/<%= @bookmark %>">Cancel</a>
     </form>
   </div>
 </div>
